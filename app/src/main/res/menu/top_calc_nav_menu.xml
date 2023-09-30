@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/calc_2018_item"
+        android:title="2018 CALCULATOR" />
+
+    <item
+        android:id="@+id/calc_2013_item"
+        android:title="2013 CALCULATOR" />
+</menu>

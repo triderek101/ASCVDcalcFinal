@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.ascvd_calc1.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_references"
+        android:name="com.example.ascvd_calc1.ui.references.ReferencesFragment"
+        android:label="@string/title_references"
+        tools:layout="@layout/fragment_references" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.example.ascvd_calc1.ui.about.AboutFragment"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/navigation_disclaimer"
+        android:name="com.example.ascvd_calc1.ui.about.DisclaimerFragment"
+        android:label="@string/title_disclaimer" />
+
+    <fragment
+        android:id="@+id/asvcd2013Calc"
+        android:name="com.example.ascvd_calc1.ui.Calc2013Fragment"
+        android:label="ASVCD 2013 Calculator"
+        tools:layout="@layout/asvcd_2013_calc" />
+
+
+
+
+</navigation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calc_navigation"
+    app:startDestination="@id/asvcd2018Calc">
+
+    <fragment
+        android:id="@+id/asvcd2018Calc"
+        android:name="com.example.ascvd_calc1.ui.home.HomeFragment"
+        android:label="Asvcd2018Calc"
+        tools:layout="@layout/asvcd_2018_calc" />
+
+    <fragment
+        android:id="@+id/asvcd2013Calc"
+        android:name="com.example.ascvd_calc1.ui.Calc2013Fragment"
+        android:label="Asvcd2013Calc"
+        tools:layout="@layout/asvcd_2013_calc"/>
+
+</navigation>

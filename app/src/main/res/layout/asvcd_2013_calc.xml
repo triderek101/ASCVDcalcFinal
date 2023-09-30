@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Asvcd2013Calc">
+
+    <ScrollView
+        android:layout_width="421dp"
+        android:layout_height="720dp"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <!-- Age -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Age (in years)" />
+
+            <EditText
+                android:id="@+id/editTextAge_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your age"
+                android:inputType="number" />
+
+            <!-- Biological Sex -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What is was your sex assigned at birth?" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupBiologicalSex_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonMale_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFemale_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+            </RadioGroup>
+
+            <!-- Black? -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Race" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupBlack_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonWhite_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="White" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonAfricanAmerican_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Black" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonOther_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other" />
+            </RadioGroup>
+
+            <!-- Diabetes? -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Do you have a history of diabetes?" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupDiabetes_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonDiabetesYes_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDiabetesNo_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+
+            <!-- Current Smoking Tobacco? -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Are you currently smoking?" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupSmokingTobacco_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonSmokingYes_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSmokingNo_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <!-- Current Smoking Tobacco? -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Are you currently taking any blood pressure medication?" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupBloodPressure_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonBPYes_2013"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonBPNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+
+            <!-- Total Cholesterol -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Cholesterol (mg/dL)" />
+
+            <EditText
+                android:id="@+id/editTextTotalCholesterol_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter total cholesterol"
+                android:inputType="numberDecimal" />
+
+            <!-- HDL Cholesterol -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HDL Cholesterol (mg/dL)" />
+
+            <EditText
+                android:id="@+id/editTextHDLCholesterol_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter HDL cholesterol"
+                android:inputType="numberDecimal" />
+
+            <!-- Systolic Blood Pressure -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Systolic Blood Pressure (mmHg)" />
+
+            <EditText
+                android:id="@+id/editTextSystolicBP_2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter systolic blood pressure"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/buttonCalculate_2013"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="CALCULATE" />
+
+            <TextView
+                android:id="@+id/textViewASCVDRisk_2013"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2013 10-year ASCVD risk: "
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
