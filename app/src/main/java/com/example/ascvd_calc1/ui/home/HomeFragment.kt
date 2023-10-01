@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Switch
 import android.widget.TextView
+import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import com.example.ascvd_calc1.Asvcd2018Calc
 import com.example.ascvd_calc1.R
@@ -25,7 +26,7 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         Log.d("HomeFragment", "onCreate executed")
 
-        val toggleSwitch: Switch = view.findViewById(R.id.toggleSwitch)
+        val toggleSwitch: SwitchCompat = view.findViewById<SwitchCompat>(R.id.toggleSwitch)
 
         toggleSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -91,8 +92,6 @@ class HomeFragment : Fragment() {
             val calculator = Asvcd2013Calc()
             val ascvdRisk2013: Double = calculator.calculateValue( isBlack, biologicalSex, age, sbp,
                 bloodPressureMedication,hasDiabetes, isSmoking, cholesterol, hdl)
-
-
 
             ascvdRiskTextView2013.text = "2013 10-year ASCVD risk: ${"%.2f".format(ascvdRisk2013)}%"
         }
