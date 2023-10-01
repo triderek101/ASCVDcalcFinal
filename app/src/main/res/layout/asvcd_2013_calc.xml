@@ -161,7 +161,7 @@
                     android:text="Yes" />
 
                 <RadioButton
-                    android:id="@+id/radioButtonBPNo"
+                    android:id="@+id/radioButtonBPNo_2013"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No" />

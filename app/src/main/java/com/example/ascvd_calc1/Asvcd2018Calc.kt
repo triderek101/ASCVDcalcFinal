@@ -91,7 +91,7 @@ class Asvcd2018Calc : AppCompatActivity() {
                 R.id.radioButtonBPNo -> BpMedStatus.NO
                 else -> BpMedStatus.NO
             }
-
+/*
             val totalCholesterolEditText: EditText = findViewById(R.id.editTextTotalCholesterol)
             val totalCholesterol: Int = totalCholesterolEditText.text.toString().toInt()
 
@@ -100,7 +100,7 @@ class Asvcd2018Calc : AppCompatActivity() {
 
             val systolicBloodPressureEditText: EditText = findViewById(R.id.editTextSystolicBP)
             val systolicBloodPressure: Int = systolicBloodPressureEditText.text.toString().toInt()
-
+*/
             val ascvdRisk: Double = calculateValue( isBlack, biologicalSex, age, sbp,
                 bloodPressureMedication, hasDiabetes, isSmoking, cholesterol, hdl)
 

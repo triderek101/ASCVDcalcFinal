@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.exp
 import android.util.Log
+import java.time.temporal.ValueRange
+import kotlin.math.pow
 
 class Asvcd2013Calc : AppCompatActivity() {
 
@@ -40,10 +42,10 @@ class Asvcd2013Calc : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.asvcd_2013_calc)
 
-        val calculateButton: Button = findViewById(R.id.buttonCalculate_2013)
-        val ascvdRiskTextView: TextView = findViewById(R.id.textViewASCVDRisk_2013)
+        val calculateButton2013: Button = findViewById(R.id.buttonCalculate_2013)
+        val ascvdRiskTextView2013: TextView = findViewById(R.id.textViewASCVDRisk_2013)
 
-        calculateButton.setOnClickListener {
+        calculateButton2013.setOnClickListener {
             val ageEditText: EditText = findViewById(R.id.editTextAge_2013)
             val age: Int = ageEditText.text.toString().toInt()
 
@@ -58,51 +60,43 @@ class Asvcd2013Calc : AppCompatActivity() {
 
             val biologicalSexGroup: RadioGroup = findViewById(R.id.radioGroupBiologicalSex_2013)
             val biologicalSex: Gender = when (biologicalSexGroup.checkedRadioButtonId) {
-                R.id.radioButtonMale -> Gender.MALE
-                R.id.radioButtonFemale -> Gender.FEMALE
+                R.id.radioButtonMale_2013 -> Gender.MALE
+                R.id.radioButtonFemale_2013 -> Gender.FEMALE
                 else -> Gender.MALE
             }
 
             val blackGroup: RadioGroup = findViewById(R.id.radioGroupBlack_2013)
             val isBlack: Race = when (blackGroup.checkedRadioButtonId) {
-                R.id.radioButtonAfricanAmerican -> Race.BLACK
-                R.id.radioButtonWhite -> Race.WHITE
+                R.id.radioButtonAfricanAmerican_2013 -> Race.BLACK
+                R.id.radioButtonWhite_2013 -> Race.WHITE
                 else -> Race.OTHER
             }
             val isSmokingGroup: RadioGroup = findViewById(R.id.radioGroupSmokingTobacco_2013)
             val isSmoking: SmokingStatus = when (isSmokingGroup.checkedRadioButtonId) {
-                R.id.radioButtonSmokingYes -> SmokingStatus.YES
-                R.id.radioButtonSmokingNo -> SmokingStatus.NO
+                R.id.radioButtonSmokingYes_2013 -> SmokingStatus.YES
+                R.id.radioButtonSmokingNo_2013 -> SmokingStatus.NO
                 else -> SmokingStatus.NO
             }
 
             val hasDiabetesGroup: RadioGroup = findViewById(R.id.radioGroupDiabetes_2013)
             val hasDiabetes: DiabetesStatus = when (hasDiabetesGroup.checkedRadioButtonId) {
-                R.id.radioButtonDiabetesYes -> DiabetesStatus.YES
-                R.id.radioButtonDiabetesNo -> DiabetesStatus.NO
+                R.id.radioButtonDiabetesYes_2013 -> DiabetesStatus.YES
+                R.id.radioButtonDiabetesNo_2013 -> DiabetesStatus.NO
                 else -> DiabetesStatus.NO
             }
 
             val radioGroupBloodPressure: RadioGroup = findViewById(R.id.radioGroupBloodPressure_2013)
             val bloodPressureMedication: BpMedStatus = when (radioGroupBloodPressure.checkedRadioButtonId) {
-                R.id.radioButtonBPYes -> BpMedStatus.YES
-                R.id.radioButtonBPNo -> BpMedStatus.NO
+                R.id.radioButtonBPYes_2013 -> BpMedStatus.YES
+                R.id.radioButtonBPNo_2013 -> BpMedStatus.NO
                 else -> BpMedStatus.NO
             }
 
-            val totalCholesterolEditText: EditText = findViewById(R.id.editTextTotalCholesterol_2013)
-            val totalCholesterol: Int = totalCholesterolEditText.text.toString().toInt()
 
-            val hdlCholesterolEditText: EditText = findViewById(R.id.editTextHDLCholesterol_2013)
-            val hdlCholesterol: Int = hdlCholesterolEditText.text.toString().toInt()
+            val ascvdRisk2013: Double = calculateValue( isBlack, biologicalSex, age, sbp,
+                bloodPressureMedication,hasDiabetes, isSmoking, cholesterol, hdl)
 
-            val systolicBloodPressureEditText: EditText = findViewById(R.id.editTextSystolicBP_2013)
-            val systolicBloodPressure: Int = systolicBloodPressureEditText.text.toString().toInt()
-
-            val ascvdRisk: Double = calculateValue( isBlack, biologicalSex, age, sbp,
-                bloodPressureMedication, hasDiabetes, isSmoking, cholesterol, hdl)
-
-            ascvdRiskTextView.text = "10-year ASCVD risk: ${"%.2f".format(ascvdRisk)}%"
+            ascvdRiskTextView2013.text = "2013 10-year ASCVD risk: ${"%.2f".format(ascvdRisk2013)}%"
         }
     }
 
@@ -187,7 +181,10 @@ class Asvcd2013Calc : AppCompatActivity() {
 
 
     // Function to get the Ln Txed Systolic BP (mm Hg)  coefficient based on race and gender
-    private fun getLnTxedSystolicBp(race: Race, gender: Gender): Double {
+    private fun getLnTxedSystolicBp(race: Race, gender: Gender, bpMedStatus: BpMedStatus): Double {
+        if (bpMedStatus == BpMedStatus.NO)
+            return 0.0
+
         return when (race to gender) {
             Race.WHITE to Gender.MALE -> 1.797
             Race.WHITE to Gender.FEMALE -> 2.019
@@ -201,7 +198,10 @@ class Asvcd2013Calc : AppCompatActivity() {
 
 
     // Function to get the Ln Age x Ln Tx'ed Systolic BP  coefficient based on race and gender
-    private fun getLnAgeXLnTxedSystolicBp(race: Race, gender: Gender): Double {
+    private fun getLnAgeXLnTxedSystolicBp(race: Race, gender: Gender, bpMedStatus: BpMedStatus): Double {
+        if (bpMedStatus == BpMedStatus.NO)
+            return 0.0
+
         return when (race to gender) {
             Race.WHITE to Gender.MALE -> 0.000
             Race.WHITE to Gender.FEMALE -> 0.000
@@ -214,7 +214,10 @@ class Asvcd2013Calc : AppCompatActivity() {
     }
 
     // Function to get the Ln Untx'ed Systolic BP (mm Hg) coefficient based on race and gender
-    private fun getLnUntxedSystolicBp(race: Race, gender: Gender): Double {
+    private fun getLnUntxedSystolicBp(race: Race, gender: Gender, bpMedStatus: BpMedStatus): Double {
+        if (bpMedStatus == BpMedStatus.YES)
+            return 0.0
+
         return when (race to gender) {
             Race.WHITE to Gender.MALE -> 1.764
             Race.WHITE to Gender.FEMALE -> 1.957
@@ -227,7 +230,10 @@ class Asvcd2013Calc : AppCompatActivity() {
     }
 
     // Function to get the Ln Age x Ln Untxed Systolic BP coefficient based on race and gender
-    private fun getLnAgeXLnUntxedSystolicBp(race: Race, gender: Gender): Double {
+    private fun getLnAgeXLnUntxedSystolicBp(race: Race, gender: Gender, bpMedStatus: BpMedStatus): Double {
+        if (bpMedStatus == BpMedStatus.YES)
+            return 0.0
+
         return when (race to gender) {
             Race.WHITE to Gender.MALE -> 0.000
             Race.WHITE to Gender.FEMALE -> 0.000
@@ -241,7 +247,9 @@ class Asvcd2013Calc : AppCompatActivity() {
 
 
     // Function to get the Current Smoker (1=Yes, 0=No) coefficient based on race and gender
-    private fun getCurrentSmoker(race: Race, gender: Gender): Double {
+    private fun getCurrentSmoker(race: Race, gender: Gender, isSmoking: SmokingStatus): Double {
+        if (isSmoking == SmokingStatus.NO)
+            return 0.0
         return when (race to gender) {
             Race.WHITE to Gender.MALE -> 7.837
             Race.WHITE to Gender.FEMALE -> 7.574
@@ -254,7 +262,10 @@ class Asvcd2013Calc : AppCompatActivity() {
     }
 
     // Function to get the Ln Age x Current Smoker coefficient based on race and gender
-    private fun getLnAgeXCurrentSmoker(race: Race, gender: Gender): Double {
+    private fun getLnAgeXCurrentSmoker(race: Race, gender: Gender, isSmoking: SmokingStatus): Double {
+        if (isSmoking == SmokingStatus.NO)
+            return 0.0
+
         return when (race to gender) {
             Race.WHITE to Gender.MALE -> -1.795
             Race.WHITE to Gender.FEMALE -> -1.665
@@ -268,7 +279,9 @@ class Asvcd2013Calc : AppCompatActivity() {
 
 
     // Function to get the Diabetes (1=Yes, 0=No) coefficient based on race and gender
-    private fun getDiabetes(race: Race, gender: Gender): Double {
+    private fun getDiabetes(race: Race, gender: Gender, hasDiabetes: DiabetesStatus): Double {
+        if (hasDiabetes == DiabetesStatus.NO)
+            return 0.0
         return when (race to gender) {
             Race.WHITE to Gender.MALE -> 0.658
             Race.WHITE to Gender.FEMALE -> 0.661
@@ -277,70 +290,118 @@ class Asvcd2013Calc : AppCompatActivity() {
             Race.OTHER to Gender.MALE -> 0.658
             Race.OTHER to Gender.FEMALE -> 0.661
             else -> throw IllegalArgumentException("Invalid combination of race and gender")
+
+
         }
     }
 
+    private fun meanCoeffValue (race: Race, gender: Gender): Double {
+        return when (race to gender) {
+            Race.WHITE to Gender.MALE -> 61.18
+            Race.WHITE to Gender.FEMALE -> -29.18
+            Race.BLACK to Gender.MALE -> 19.54
+            Race.BLACK to Gender.FEMALE -> 86.61
+            Race.OTHER to Gender.MALE -> 61.18
+            Race.OTHER to Gender.FEMALE -> -29.18
+            else -> throw IllegalArgumentException("Invalid combination of race and gender")
 
+        }
+    }
+    private fun meanSurvivalBaselines (race: Race, gender: Gender): Double {
+        return when (race to gender) {
+            Race.WHITE to Gender.MALE -> 0.9144
+            Race.WHITE to Gender.FEMALE -> 0.9665
+            Race.BLACK to Gender.MALE -> 0.8954
+            Race.BLACK to Gender.FEMALE -> 0.9533
+            Race.OTHER to Gender.MALE -> 0.9144
+            Race.OTHER to Gender.FEMALE -> 0.9665
+            else -> throw IllegalArgumentException("Invalid combination of race and gender")
+
+        }
+    }
     fun calculateValue(
         race: Race, gender: Gender, age: Int, sbp: Int,
-        bpMedStatus: BpMedStatus, diabetesStatus: DiabetesStatus,
+        bpMedStatus: BpMedStatus, hasDiabetes: DiabetesStatus,
         smokingStatus: SmokingStatus, chol: Int, hdl: Int
     ): Double {
 
         // Manvita 2013 Changes
-        val getLnAgeY = getLnAgeY(race, gender)*age
+
+        // Basic equations to make math easier
+        val lnAge = kotlin.math.ln(age.toDouble())
+        val lnChol = kotlin.math.ln(chol.toDouble())
+        val lnHdl = kotlin.math.ln(hdl.toDouble())
+        val lnSbp = kotlin.math.ln(sbp.toDouble())
+
+
+        val getLnAgeY = getLnAgeY(race, gender)*(kotlin.math.ln(age.toDouble()))
         Log.d("AppLog", "getLnAgeY: $getLnAgeY")
 
-        val getLnAgeSquared = getLnAgeSquared(race, gender)*age
-        Log.d("AppLog", "getLnAgeSquared: $getLnAgeSquared")
+        val lnAgeSquared = lnAge * lnAge  // This squares the natural log value
+        val getLnAgeSquaredValue = getLnAgeSquared(race, gender) * lnAgeSquared
+        Log.d("AppLog", "getLnAgeSquared: $getLnAgeSquaredValue")
 
-        val getLnTotalChol = getLnTotalChol(race, gender)
+        val getLnTotalChol = getLnTotalChol(race, gender)*(kotlin.math.ln(chol.toDouble()))
         //val LnAgeXLnTotalChol = getLnAgeY * getLnTotalChol
         Log.d("AppLog", "getLnTotalChol: $getLnTotalChol")
 
-        val getLnAgeXLnTotalChol = getLnAgeXLnTotalChol(race, gender)*age
-        Log.d("AppLog", "getLnAgeXLnTotalChol: $getLnAgeXLnTotalChol")
+        val getLnAgeXLnTotalCholValue = getLnAgeXLnTotalChol(race, gender) * (lnAge * lnChol)
+        Log.d("AppLog", "getLnAgeXLnTotalChol: $getLnAgeXLnTotalCholValue")
 
-        val getLnHDLC = getLnHDLC(race, gender)*age
+        val getLnHDLC = getLnHDLC(race, gender) * kotlin.math.ln(hdl.toDouble())
         Log.d("AppLog", "getLnHDLC: $getLnHDLC")
 
-        val getLnAgeXLnHDLC = getLnAgeXLnHDLC(race, gender)*age
-        Log.d("AppLog", "getLnAgeXLnHDLC: $getLnAgeXLnHDLC")
+        val getLnAgeXLnHDLCValue = getLnAgeXLnHDLC(race, gender) * (lnAge * lnHdl)
+        Log.d("AppLog", "getLnAgeXLnHDLC: $getLnAgeXLnHDLCValue")
 
-        val getLnTxedSystolicBp = getLnTxedSystolicBp(race, gender)*age
+        val getLnTxedSystolicBp = getLnTxedSystolicBp(race, gender, bpMedStatus)*kotlin.math.ln(sbp.toDouble())
+        val a = getLnTxedSystolicBp(race,gender,bpMedStatus)
+        val b = kotlin.math.ln(sbp.toDouble())
+        Log.d("AppLog", "getLnTxedSystolicBp(race, gender): $a")
+        Log.d("AppLog", "Kotlin.math.ln(hdl.toDouble()): $b")
         Log.d("AppLog", "getLnTxedSystolicBp: $getLnTxedSystolicBp")
 
 
-        val getLnAgeXLnTxedSystolicBp = getLnAgeXLnTxedSystolicBp(race, gender)*age
-        Log.d("AppLog", "getLnAgeXLnTxedSystolicBp: $getLnAgeXLnTxedSystolicBp")
+        val getLnAgeXLnTxedSystolicBpValue = getLnAgeXLnTxedSystolicBp(race, gender,bpMedStatus) * (lnAge * lnSbp)
+        Log.d("AppLog", "getLnAgeXLnTxedSystolicBp: $getLnAgeXLnTxedSystolicBpValue")
 
-        val getLnUntxedSystolicBp = getLnUntxedSystolicBp(race, gender)*age
+        val getLnUntxedSystolicBp = getLnUntxedSystolicBp(race, gender,bpMedStatus)*kotlin.math.ln(sbp.toDouble())
         Log.d("AppLog", "getLnUntxedSystolicBp: $getLnUntxedSystolicBp")
 
-        val getLnAgeXLnUntxedSystolicBp = getLnAgeXLnUntxedSystolicBp(race, gender)*age
-        Log.d("AppLog", "getLnAgeXLnUntxedSystolicBp: $getLnAgeXLnUntxedSystolicBp")
+        val getLnAgeXLnUntxedSystolicBpValue = getLnAgeXLnUntxedSystolicBp(race, gender,bpMedStatus) * (lnAge * lnSbp)
+        Log.d("AppLog", "getLnAgeXLnUntxedSystolicBp: $getLnAgeXLnUntxedSystolicBpValue")
 
-        val getCurrentSmoker = getCurrentSmoker(race, gender)*age
+        val getCurrentSmoker = getCurrentSmoker(race, gender, smokingStatus)
         Log.d("AppLog", "getCurrentSmoker: $getCurrentSmoker")
 
-        val getLnAgeXCurrentSmoker = getLnAgeXCurrentSmoker(race, gender)*age
+        val getLnAgeXCurrentSmoker = getLnAgeXCurrentSmoker(race, gender, smokingStatus)
         Log.d("AppLog", "getLnAgeXCurrentSmoker: $getLnAgeXCurrentSmoker")
 
-        val getDiabetes = getDiabetes(race, gender)*age
+        val getDiabetes = getDiabetes(race, gender, hasDiabetes)
         Log.d("AppLog", "getDiabetes: $getDiabetes")
 
 
         // Calculating the sum of all the terms
-        val totalSum: Double = getLnAgeY + getLnAgeSquared + getLnTotalChol +
-                getLnAgeXLnTotalChol + getLnHDLC + getLnAgeXLnHDLC + getLnTxedSystolicBp +
-                getLnAgeXLnTxedSystolicBp +
+        val totalSum: Double = getLnAgeY + getLnAgeSquaredValue + getLnTotalChol +
+                getLnAgeXLnTotalCholValue + getLnHDLC + getLnAgeXLnHDLCValue + getLnTxedSystolicBp +
+                getLnAgeXLnTxedSystolicBpValue +
                 getLnUntxedSystolicBp +
-                getLnAgeXLnUntxedSystolicBp +
+                getLnAgeXLnUntxedSystolicBpValue +
                 getCurrentSmoker +
                 getLnAgeXCurrentSmoker +
                 getDiabetes
         Log.d("AppLog", "Calculating the sum of the terms: $totalSum")
 
+        // Calculating the difference to total sum and meanCoeffValue
+        val indSumMeanCoeffValue: Double = totalSum - meanCoeffValue(race, gender)
+        Log.d("AppLog", "Calculating the negative sum of the terms: $indSumMeanCoeffValue")
+
+        val survivalBaseline = kotlin.math.exp(indSumMeanCoeffValue)
+        Log.d("AppLog", "Exponential of the negative sum of the terms: $survivalBaseline")
+
+        val finalterm: Double = meanSurvivalBaselines(race, gender).pow(survivalBaseline)
+        Log.d("AppLog", "Result of raising meanSurvivalBaseline to the power of survivalBaseline: $finalterm")
+/*
         // Calculating the negative sum of the terms
         val negTotalSum: Double = 0 - totalSum
         Log.d("AppLog", "Calculating the negative sum of the terms: $negTotalSum")
@@ -352,9 +413,9 @@ class Asvcd2013Calc : AppCompatActivity() {
         // Calculating the exponent of negative sum of terms plus 1
         val expNegSumPlusOne: Double = expNegSum + 1
         Log.d("AppLog", "Calculating the exponent of negative sum of terms plus 1: $expNegSumPlusOne")
-
+*/
         // Calculating the risk percentage term
-        val riskTerm: Double = (1 / expNegSumPlusOne) * 100
+        val riskTerm: Double = (1-finalterm)*100
         Log.d("AppLog", "Calculating the risk percentage term: $riskTerm")
 
         //Returning the percentage of the risk term
