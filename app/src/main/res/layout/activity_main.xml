@@ -5,7 +5,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
     tools:context=".MainActivity">
 
     <!-- Use FragmentContainerView for the NavHostFragment -->
@@ -32,9 +31,11 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

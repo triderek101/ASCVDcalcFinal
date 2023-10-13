@@ -20,5 +20,10 @@
         android:id="@+id/navigation_references"
         android:icon="?attr/actionModePasteDrawable"
         android:title="@string/title_references" />
+    <item
+        android:id="@+id/navigation_moreinfo"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="@string/title_moreinfo" />
+
 
 </menu>

@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="What is was your sex assigned at birth?" />
+                android:text="Patient sex assigned at birth?" />
 
             <RadioGroup
                 android:id="@+id/radioGroupBiologicalSex"
@@ -91,14 +91,14 @@
                     android:id="@+id/radioButtonOther"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Other" />
+                    android:text="Other*" />
             </RadioGroup>
 
             <!-- Diabetes? -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Do you have a history of diabetes?" />
+                android:text="Does the patient have a history of diabetes?" />
 
             <RadioGroup
                 android:id="@+id/radioGroupDiabetes"
@@ -124,7 +124,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Are you currently smoking?" />
+                android:text="Does the patient currently smoke?" />
 
             <RadioGroup
                 android:id="@+id/radioGroupSmokingTobacco"
@@ -149,7 +149,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Are you currently taking any blood pressure medication?" />
+                android:text="Does the patient take blood pressure medication?" />
 
             <RadioGroup
                 android:id="@+id/radioGroupBloodPressure"

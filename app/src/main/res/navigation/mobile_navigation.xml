@@ -29,6 +29,11 @@
         android:label="@string/title_disclaimer" />
 
     <fragment
+        android:id="@+id/navigation_moreinfo"
+        android:name="com.example.ascvd_calc1.ui.moreinfo.MoreInfoFragment"
+        android:label="@string/title_moreinfo" />
+
+    <fragment
         android:id="@+id/asvcd2013Calc"
         android:name="com.example.ascvd_calc1.ui.Calc2013Fragment"
         android:label="ASVCD 2013 Calculator"
