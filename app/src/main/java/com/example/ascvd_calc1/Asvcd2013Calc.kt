@@ -10,6 +10,7 @@ import kotlin.math.exp
 import android.util.Log
 import java.time.temporal.ValueRange
 import kotlin.math.pow
+import kotlin.math.round
 
 class Asvcd2013Calc : AppCompatActivity() {
 
@@ -38,67 +39,6 @@ class Asvcd2013Calc : AppCompatActivity() {
         YES, NO
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.asvcd_2013_calc)
-
-        val calculateButton2013: Button = findViewById(R.id.buttonCalculate_2013)
-        val ascvdRiskTextView2013: TextView = findViewById(R.id.textViewASCVDRisk_2013)
-
-        calculateButton2013.setOnClickListener {
-            val ageEditText: EditText = findViewById(R.id.editTextAge_2013)
-            val age: Int = ageEditText.text.toString().toInt()
-
-            val systolicBpEditText: EditText = findViewById(R.id.editTextSystolicBP_2013)
-            val sbp: Int = systolicBpEditText.text.toString().toInt()
-
-            val cholesterolEditText: EditText = findViewById(R.id.editTextTotalCholesterol_2013)
-            val cholesterol: Int = cholesterolEditText.text.toString().toInt()
-
-            val hdlEditText: EditText = findViewById(R.id.editTextHDLCholesterol_2013)
-            val hdl: Int = hdlEditText.text.toString().toInt()
-
-            val biologicalSexGroup: RadioGroup = findViewById(R.id.radioGroupBiologicalSex_2013)
-            val biologicalSex: Gender = when (biologicalSexGroup.checkedRadioButtonId) {
-                R.id.radioButtonMale_2013 -> Gender.MALE
-                R.id.radioButtonFemale_2013 -> Gender.FEMALE
-                else -> Gender.MALE
-            }
-
-            val blackGroup: RadioGroup = findViewById(R.id.radioGroupBlack_2013)
-            val isBlack: Race = when (blackGroup.checkedRadioButtonId) {
-                R.id.radioButtonAfricanAmerican_2013 -> Race.BLACK
-                R.id.radioButtonWhite_2013 -> Race.WHITE
-                else -> Race.OTHER
-            }
-            val isSmokingGroup: RadioGroup = findViewById(R.id.radioGroupSmokingTobacco_2013)
-            val isSmoking: SmokingStatus = when (isSmokingGroup.checkedRadioButtonId) {
-                R.id.radioButtonSmokingYes_2013 -> SmokingStatus.YES
-                R.id.radioButtonSmokingNo_2013 -> SmokingStatus.NO
-                else -> SmokingStatus.NO
-            }
-
-            val hasDiabetesGroup: RadioGroup = findViewById(R.id.radioGroupDiabetes_2013)
-            val hasDiabetes: DiabetesStatus = when (hasDiabetesGroup.checkedRadioButtonId) {
-                R.id.radioButtonDiabetesYes_2013 -> DiabetesStatus.YES
-                R.id.radioButtonDiabetesNo_2013 -> DiabetesStatus.NO
-                else -> DiabetesStatus.NO
-            }
-
-            val radioGroupBloodPressure: RadioGroup = findViewById(R.id.radioGroupBloodPressure_2013)
-            val bloodPressureMedication: BpMedStatus = when (radioGroupBloodPressure.checkedRadioButtonId) {
-                R.id.radioButtonBPYes_2013 -> BpMedStatus.YES
-                R.id.radioButtonBPNo_2013 -> BpMedStatus.NO
-                else -> BpMedStatus.NO
-            }
-
-
-            val ascvdRisk2013: Double = calculateValue( isBlack, biologicalSex, age, sbp,
-                bloodPressureMedication,hasDiabetes, isSmoking, cholesterol, hdl)
-
-            ascvdRiskTextView2013.text = "2013 10-year ASCVD risk: ${"%.2f".format(ascvdRisk2013)}%"
-        }
-    }
 
     // Manvita 2013 changes
     // Function to get the Ln age (y) coefficient-2013 based on race and gender
@@ -148,7 +88,7 @@ class Asvcd2013Calc : AppCompatActivity() {
             Race.BLACK to Gender.MALE -> 0.000
             Race.BLACK to Gender.FEMALE -> 0.000
             Race.OTHER to Gender.MALE -> -2.664
-            Race.OTHER to Gender.FEMALE -> 0.000
+            Race.OTHER to Gender.FEMALE -> -3.114
             else -> throw IllegalArgumentException("Invalid combination of race and gender")
         }
     }
@@ -374,7 +314,7 @@ class Asvcd2013Calc : AppCompatActivity() {
         val getCurrentSmoker = getCurrentSmoker(race, gender, smokingStatus)
         Log.d("AppLog", "getCurrentSmoker: $getCurrentSmoker")
 
-        val getLnAgeXCurrentSmoker = getLnAgeXCurrentSmoker(race, gender, smokingStatus)
+        val getLnAgeXCurrentSmoker = getLnAgeXCurrentSmoker(race, gender, smokingStatus) * lnAge
         Log.d("AppLog", "getLnAgeXCurrentSmoker: $getLnAgeXCurrentSmoker")
 
         val getDiabetes = getDiabetes(race, gender, hasDiabetes)
@@ -415,12 +355,13 @@ class Asvcd2013Calc : AppCompatActivity() {
         Log.d("AppLog", "Calculating the exponent of negative sum of terms plus 1: $expNegSumPlusOne")
 */
         // Calculating the risk percentage term
-        val riskTerm: Double = (1-finalterm)*100
+        // Calculating the risk percentage term
+        val riskTermRaw: Double = (1-finalterm)*100
+        val riskTerm: Double = (round(riskTermRaw * 10) / 10) // Round to the nearest tenth
         Log.d("AppLog", "Calculating the risk percentage term: $riskTerm")
 
-        //Returning the percentage of the risk term
+//Returning the percentage of the risk term
         return riskTerm.coerceIn(0.0, 100.0)
-        Log.d("AppLog", "Returning the percentage of the risk term: $riskTerm")
 
     }
 

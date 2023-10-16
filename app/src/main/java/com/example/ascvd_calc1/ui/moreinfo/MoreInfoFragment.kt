@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.ascvd_calc1.databinding.FragmentMoreinfoBinding
+import com.example.ascvd_calc1.R
 
 class MoreInfoFragment : Fragment() {
 
@@ -43,35 +44,42 @@ class MoreInfoFragment : Fragment() {
         listDataHeader.add("Where are the target LDL's?")
         listDataHeader.add("Can I plug in a coronary calcium score?")
         listDataHeader.add("What does 24.3% 10-yr cardiac risk mean?")
-        listDataHeader.add("If you really want treatment guidance")
         listDataHeader.add("Do we need another risk calculator app?")
-        // ... add more topics as needed
+        listDataHeader.add("*What about the Other race?")
 
         // Adding child data
         val topic1: MutableList<String> = ArrayList()
-        topic1.add("Your text for 'More about Framingham 2008' goes here.")
+        topic1.add(getString(R.string.more_about_framingham_2008))
+
         val topic2: MutableList<String> = ArrayList()
-        topic2.add("Your text for 'More about ASCVD 2013' goes here.")
+        topic2.add(getString(R.string.more_about_ascvd_2013))
+
         val topic3: MutableList<String> = ArrayList()
-        topic3.add("Your text for 'More about proposed revised PCE 2018' goes here.")
+        topic3.add(getString(R.string.more_about_proposed_revised_pce_2018))
+
         val topic4: MutableList<String> = ArrayList()
-        topic4.add("Your text for 'More about proposed revised PCE 2018' goes here.")
+        topic4.add(getString(R.string.about_race_in_cardiovascular_risk))
+
         val topic5: MutableList<String> = ArrayList()
-        topic5.add("Your text for 'More about proposed revised PCE 2018' goes here.")
+        topic5.add(getString(R.string.why_cant_enter_ldl_diastolic_bp))
+
         val topic6: MutableList<String> = ArrayList()
-        topic6.add("Your text for 'More about proposed revised PCE 2018' goes here.")
+        topic6.add(getString(R.string.where_are_treatment_thresholds))
+
         val topic7: MutableList<String> = ArrayList()
-        topic7.add("Your text for 'More about proposed revised PCE 2018' goes here.")
+        topic7.add(getString(R.string.where_are_target_ldls))
+
         val topic8: MutableList<String> = ArrayList()
-        topic8.add("Your text for 'More about proposed revised PCE 2018' goes here.")
+        topic8.add(getString(R.string.can_i_plug_in_cac_score))
+
         val topic9: MutableList<String> = ArrayList()
-        topic9.add("Your text for 'More about proposed revised PCE 2018' goes here.")
+        topic9.add(getString(R.string.what_does_24_3_percent_cardiac_risk_mean))
+
         val topic10: MutableList<String> = ArrayList()
-        topic10.add("Your text for 'More about proposed revised PCE 2018' goes here.")
+        topic10.add(getString(R.string.this_app_offers_features))
+
         val topic11: MutableList<String> = ArrayList()
-        topic11.add("Your text for 'More about proposed revised PCE 2018' goes here.")
-
-
+        topic11.add(getString(R.string.race_calculation_note))
 
         // ... add more topic texts as needed
 

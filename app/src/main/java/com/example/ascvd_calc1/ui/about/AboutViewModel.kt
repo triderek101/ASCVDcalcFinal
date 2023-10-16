@@ -18,7 +18,7 @@ class AboutViewModel : ViewModel() {
             Katrina Bakhl BS, Penn State College of Medicine
             Joshua Steinberg MD, UHS Wilson Family
             
-            VERSION: 1.1
+            VERSION: 1.0
             BUILD: 1
             COPYRIGHT: September, 2023
             
