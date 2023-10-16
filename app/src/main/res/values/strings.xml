@@ -8,12 +8,12 @@
     <string name="calculator_2">2013 Calculator</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_moreinfo">More Info</string>
-    <string name="current_age">Current Age (in years)</string>
+    <string name="current_age">Patient Age (in years)</string>
     <string name="enter_age_hint">Enter your age</string>
     <string name="biological_sex">Patient sex assigned at birth?</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="race">Race</string>
+    <string name="race">Patient Race</string>
     <string name="white">White</string>
     <string name="black">Black</string>
     <string name="other">Other*</string>
@@ -109,7 +109,7 @@ primary prevention (BOGSAT = \"bunch of guys\
 sitting around table). I think these targets are an expensive example of low-value care.\
 Please feel free to send me feedback. If you have suggestions for the app or for the more-info discussions for users and learners, I\'d love to hear from you. We in primary care should lead on patient-oriented, evidence-based, high-value primary prevention for the betterment of our patients and our communities.\
 - Joshua Steinberg MD, Binghamton"</string>
-    <string name="race_calculation_note">"No data was done on other races in the risk calculations reference we used, so it will be calculated the same as White. Please refer to a more detailed response, please read \"what about race?\"."</string>
+    <string name="race_calculation_note">"No data was done on other races in the risk calculations reference we used, so it will be calculated the same as White. For a more detailed response, please read \"what about race?\"."</string>
 
 
 
