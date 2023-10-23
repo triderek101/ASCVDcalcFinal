@@ -9,7 +9,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_moreinfo">More Info</string>
     <string name="current_age">Patient Age (in years)</string>
-    <string name="enter_age_hint">Enter your age</string>
+    <string name="enter_age_hint">Enter patient age</string>
     <string name="biological_sex">Patient sex assigned at birth?</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
@@ -23,94 +23,126 @@
     <string name="currently_smoke">Does the patient currently smoke?</string>
     <string name="blood_pressure_medication">Does the patient take blood pressure medication?</string>
     <string name="total_cholesterol">Total Cholesterol (mg/dL)</string>
-    <string name="enter_total_cholesterol_hint">Enter total cholesterol</string>
+    <string name="enter_total_cholesterol_hint">Enter patient total cholesterol</string>
     <string name="hdl_cholesterol">HDL Cholesterol (mg/dL)</string>
-    <string name="enter_hdl_cholesterol_hint">Enter HDL cholesterol</string>
+    <string name="enter_hdl_cholesterol_hint">Enter patient HDL cholesterol</string>
     <string name="systolic_blood_pressure">Systolic Blood Pressure (mmHg)</string>
-    <string name="enter_systolic_bp_hint">Enter systolic blood pressure</string>
+    <string name="enter_systolic_bp_hint">Enter patient systolic blood pressure</string>
     <string name="calculate_button">CALCULATE</string>
     <string name="ascvd_risk">10-year ASCVD risk:</string>
     <string name="ascvd_risk_2013">2013 10-year ASCVD risk:</string>
     <string name="ascvd_risk_title">ASCVD Risk Calc App</string>
     <string name="title_ascvd_risk_calc">ASCVD Risk Calc</string>
     <string name="disclaimer_text">*No data was done on other races in the risk calculations reference we used so it will be calculated the same as White.</string>
-    <string name="more_about_framingham_2008">"
-The venerable Framingham heart study has followed a cohort of persons in Framingham, Massachusetts, every two years in three generational waves since the late 1940\'s. The longitudinal study enabled correlation of downstream health outcomes with prospective health factors, among many fascinating discoveries. The latest rendering of Framingham heart study data arrived in 2008 (see ref). Cardiac outcomes assessed are broader than the ACC\'s current ASCVD risk calculator. ASCVD only gives risk of \"hard ASCVD outcomes\" of fatal and non-fatal MI and fatal and non-fatal stroke. Framingham 2008 counts these same outcomes plus congestive heart failure, which is often but not always associated with the consequences of non-fatal MI. Since Framingham counts more clinical outcome entities than ASCVD, it is expected that Framingham risk should be a bit higher than ASCVD risk. Although CHF is an important outcome, it is not entirely appropriate to mix CHF cases of coronary-disease origin with those of non-coronary origin.\
-Critics have noted that Framingham is limited by studying but a single community, mostly from long ago, who are mostly white, and for that matter who are mostly Red Sox fans. But the biggest issue comes from the studies of the accuracy of Framingham risk predictions with modern outcomes. At all risk levels, Framingham overestimates cardiovascular event risk. It should probably not be the first or only estimation tool one uses, if one uses it at all.\
-But it does have some value.\
-Educational: if you want to show yourself or your learners how big changes in cholesterol make little change in the only thing that matters, cardiac risk, Framingham is great for this purpose. Total cholesterol levels are grouped by 40-point ranges, and HDL by 5-10 point ranges. If learners or patients think that improving their cholesterol by 17 points is great, you can show them that even 40 points barely moves real risk. Why is this important?\
-Because it helps de-emphasize the disease-oriented obsession with cholesterol alone.\
-When one sees that changes in cholesterol only modestly impact cardiac risk, one is more ready to appreciate that changes in any of the other risk factors have as big or bigger impact. Most of all this refocuses the learner and clinician on all elements which contribute to cardiac risk and the most patient-oriented concern of them all, actual cardiac event risk itself.\
-Historical: Framingham cardiovascular risk calculators started the movement looking at broader elements of cardiac risk.\
-Philosophical: not only did the Framingham cardiovascular risk studies and calculators broaden attention from cholesterol to all contributors to cardiovascular risk, but Framingham was at the vanguard of the movement to focus on patient outcomes over disease oriented outcomes. Before\
-Framingham, it was perfectly fine to pat yourself on the back as a good dutiful physician if you made a patient\'s cholesterol numbers look prettier. Framingham spearheaded the movement of valuing patient-oriented outcomes like MI, stroke, and death over management of biomolecules. This has been a profoundly important shift in medicine."</string>
-    <string name="more_about_ascvd_2013">"ACC-AHA standard of care\
-In 2013, the American College of Cardiology and American Heart Association took two significant steps. First, they endorsed and solidified a significant part of hyperlipidemia and cardiac risk management by recommending evaluation of cardiovascular event risk and treatment of those at significant risk. Second, they introduced their own risk calculation formula, the Pooled Cohort Equations. As Framingham was based upon a single community of limited diversity and somewhat aged data, this new scheme looked at 5 more modern cohorts with broader racial composition. The outcomes are only fatal and non-fatal MI and stroke, and exclude CHF and revascularization procedures, which are reasonable editorial choices. Less reasonable is the inclusion of persons in the\
-\"modern cohorts\" who are on statins. In the detailed discussion (ACC-NHLBI ref), they reason that those on statins are modest in number (not quantified), and that there is probably no difference between patients with lipid numbers achieved naturally or on statin therapy. The former may be reasonable, the latter is not.\
-Some implementations of the ACC-AHA ASCVD risk calculator offer the user 3 racial designations: white, black, and other. ACC 2019\
-Risk Assessment guideline (Lloyd-Jones 2019 ref) recommended evaluating persons of nonblack minority groups (Hispanic, Asian Americans) using the white American approach.\
-You may note that ACC ASCVD calculators give the same risk calculation whether one chooses White or Other for race. They offer discussion about differences in various racial and ethnic populations. The 2018 ACC guideline on mgmt of blood cholesterol (Grundy 2019 ref) discusses data and how a clinician has discretion to modify calculated risk based upon what is known of various groups and their risk.\
-Finally, two recent publications analyze the accuracy of the 2013 ASCVD PCE formula (DeFillipis ref, Yadlowsky ref). Incorporating additional multi-ethnic modern cohorts, they estimate ASCVD overestimates risk by around 20%. Yadlowsky proposes a revised pooled cohort equation, offered in this app and evaluated subsequently (Campos-Staffico ref).\
-"</string>
-    <string name="more_about_proposed_revised_pce_2018">"modern multi-ethnic cohorts, may be most accurate\
-Initial published evaluations of the 2013 ACC-AHA pooled cohort equations ASCVD risk calculator were favorable. However, starting in 2015 studies were published looking at additional multiethnic modern cohorts and concluding that ASCVD overestimated risk by about 20%, particularly for black adults. In 2018, Yadlowsky and colleagues (see ref) altered the ASCVD approach in two substantive ways. First they dropped the oldest of the several cohorts (original Framingham with data\
-30-65 years old) and added two more contemporary cohorts (MESA and JHS) to the ACC\'s ASCVD set. Second they changed their statistical approach to try to mitigate\
-\"overfitting\". What they produced is superior to ACC\'s ASCVD. They achieved better accuracy on risk calculations, including across all race-gender pairings. And they improved the sorting of patients on either side of typical treatment thresholds. Any new scheme will move some patients from lower risk to high and higher risk to low. A mark of a good calculator scheme is that it moves far more patients from high risk to low who don\'t have a CV event than it moves from low risk to high who do suffer an event.\
-You can make a ratio of good reassignments to bad reassignments. For treatment thresholds of 5%, 7.5%, and 10%, the Yadlowsky revised PCE ratios were 23:1, 13:1, and 8:1, respectively.\
-Yadlowsky valided their results in two different ways: internal cross-validation and prospective hold-out validation. Their revised PCE has not yet been externally validated.\
-No calculator is perfect, but no calculator needs to be. It just needs to be in the right ballpark, it should sort patients well on either side of various treatment thresholds, and it should spread its accuracy well across all gender-race pairings equitably. With this tool, patients can start discussions with their doctors on when and what interventions make sense.\
-"</string>
-    <string name="about_race_in_cardiovascular_risk">"What about race in cardiovascular risk assessment?\
-So much can, and should be said. We have been learning for several years that race considerations in medicine are complicated.\
-On the one hand, race is a social construct. It is a poor marker of genetic characteristics which might suggest higher or lower biological risks for most things in medicine.\
-On the other hand, race is highly impactful in America. If studies show higher risk of adverse cardiovascular outcomes, it must reflect the realities of socioeconomic status, access to care, monetary resources for care, biases personal and structural throughout systems, chronic stress, and more. If studies show outcomes differ, then those differences are real and matter, even if the pathways are not highly biological.\
-How to handle this and give each individual person before you the best care you can? You can click the race button in this and other calculators to recognize that a person before you may be subject to the same adverse forces in society which worsen outcomes. You can leave the race field at the default white setting in recognition that race is not highly biological.\
-You will probably notice that changing race settings do not profoundly alter who lands above and below various treatment thresholds. You are encouraged by ACC and others to modify any risk estimation by the many other things you know about the unique person in front of you, which can include race as much as anything else.\
+    <string name="more_about_framingham_2008">"Value: educational, historical, philosophical.
+
+The venerable Framingham heart study has followed a cohort of persons in Framingham, Massachusetts, every two years in three generational waves since the late 1940&#39;s. The longitudinal study enabled correlation of downstream health outcomes with prospective health factors, among many fascinating discoveries. The latest rendering of Framingham heart study data arrived in 2008 (see ref). Cardiac outcomes assessed are broader than the ACC&#39;s current ASCVD risk calculator. ASCVD only gives risk of &quot;hard ASCVD outcomes&quot; of fatal and non-fatal MI and fatal and non-fatal stroke. Framingham 2008 counts these same outcomes plus congestive heart failure, which is often but not always associated with the consequences of non-fatal MI. Since Framingham counts more clinical outcome entities than ASCVD, it is expected that Framingham risk should be a bit higher than ASCVD risk. Although CHF is an important outcome, it is not entirely appropriate to mix CHF cases of coronary-disease origin with those of non-coronary origin.
+
+Critics have noted that Framingham is limited by studying but a single community, mostly from long ago, who are mostly white, and for that matter who are mostly Red Sox fans. But the biggest issue comes from the studies of the accuracy of Framingham risk predictions with modern outcomes. At all risk levels, Framingham overestimates cardiovascular event risk. It should probably not be the first or only estimation tool one uses, if one uses it at all. But it does have some value.
+
+Educational: if you want to show yourself or your learners how big changes in cholesterol make little change in the only thing that matters, cardiac risk, Framingham is great for this purpose. Total cholesterol levels are grouped by 40-point ranges, and HDL by 5-10 point ranges. If learners or patients think that improving their cholesterol by 17 points is great, you can show them that even 40 points barely moves real risk. Why is this important?
+Because it helps de-emphasize the disease-oriented obsession with cholesterol alone. When one sees that changes in cholesterol only modestly impact cardiac risk, one is more ready to appreciate that changes in any of the other risk factors have as big or bigger impact. Most of all this refocuses the learner and clinician on all elements which contribute to cardiac risk and the most patient-oriented concern of them all, actual cardiac event risk itself.
+
+Historical: Framingham cardiovascular risk calculators started the movement looking at broader elements of cardiac risk.
+
+Philosophical: not only did the Framingham cardiovascular risk studies and calculators broaden attention from cholesterol to all contributors to cardiovascular risk, but Framingham was at the vanguard of the movement to focus on patient outcomes over disease oriented outcomes. Before Framingham, it was perfectly fine to pat yourself on the back as a good dutiful physician if you made a patient&#39;s cholesterol numbers look prettier. Framingham spearheaded the movement of valuing patient-oriented outcomes like MI, stroke, and death over management of biomolecules. This has been a profoundly important shift in medicine."</string>
+    <string name="more_about_ascvd_2013">"Value: ACC-AHA standard of care
+
+In 2013, the American College of Cardiology and American Heart Association took two significant steps. First, they endorsed and solidified a significant part of hyperlipidemia and cardiac risk management by recommending evaluation of cardiovascular event risk and treatment of those at significant risk. Second, they introduced their own risk calculation formula, the Pooled Cohort Equations. As Framingham was based upon a single community of limited diversity and somewhat aged data, this new scheme looked at 5 more modern cohorts with broader racial composition. The outcomes are only fatal and non-fatal MI and stroke, and exclude CHF and revascularization procedures, which are reasonable editorial choices. Less reasonable is the inclusion of persons in the
+&quot;modern cohorts&quot; who are on statins. In the detailed discussion (ACC-NHLBI ref), they reason that those on statins are modest in number (not quantified), and that there is probably no difference between patients with lipid numbers achieved naturally or on statin therapy. The former may be reasonable, the latter is not.
+
+Some implementations of the ACC-AHA ASCVD risk calculator offer the user 3 racial designations: white, black, and other. ACC 2019 Risk Assessment guideline (Lloyd-Jones 2019 ref) recommended evaluating persons of nonblack minority groups (Hispanic, Asian Americans) using the white American approach. You may note that ACC ASCVD calculators give the same risk calculation whether one chooses White or Other for race. They offer discussion about differences in various racial and ethnic populations. The 2018 ACC guideline on mgmt of blood cholesterol (Grundy 2019 ref) discusses data and how a clinician has discretion to modify calculated risk based upon what is known of various groups and their risk.
+
+Finally, two recent publications analyze the accuracy of the 2013 ASCVD PCE formula (DeFillipis ref, Yadlowsky ref). Incorporating additional multi-ethnic modern cohorts, they estimate ASCVD overestimates risk by around 20%. Yadlowsky proposes a revised pooled cohort equation, offered in this app and evaluated subsequently (Campos-Staffico ref)."</string>
+    <string name="more_about_proposed_revised_pce_2018">"Value: modern multi-ethnic cohorts, may be most accurate
+
+Initial published evaluations of the 2013 ACC-AHA pooled cohort equations ASCVD risk calculator were favorable. However, starting in 2015 studies were published looking at additional multiethnic modern cohorts and concluding that ASCVD overestimated risk by about 20%, particularly for black adults. In 2018, Yadlowsky and colleagues (see ref) altered the ASCVD approach in two substantive ways. First they dropped the oldest of the several cohorts (original Framingham with data
+30-65 years old) and added two more contemporary cohorts (MESA and JHS) to the ACC&#39;s ASCVD set. Second they changed their statistical approach to try to mitigate overfitting. What they produced is superior to ACC&#39;s ASCVD. They achieved better accuracy on risk calculations, including across all race-gender pairings. And they improved the sorting of patients on either side of typical treatment thresholds. Any new scheme will move some patients from lower risk to high and higher risk to low. A mark of a good calculator scheme is that it moves far more patients from high risk to low who don&#39;t have a CV event than it moves from low risk to high who do suffer an event.
+You can make a ratio of good reassignments to bad reassignments. For treatment thresholds of 5%, 7.5%, and 10%, the Yadlowsky revised PCE ratios were 23:1, 13:1, and 8:1, respectively.
+
+Yadlowsky valided their results in two different ways: internal cross-validation and prospective hold-out validation. Their revised PCE has not yet been externally validated.
+
+No calculator is perfect, but no calculator needs to be. It just needs to be in the right ballpark, it should sort patients well on either side of various treatment thresholds, and it should spread its accuracy well across all gender-race pairings equitably. With this tool, patients can start discussions with their doctors on when and what interventions make sense."</string>
+    <string name="about_race_in_cardiovascular_risk">"What about race in cardiovascular risk assessment?
+
+So much can, and should be said. We have been learning for several years that race considerations in medicine are complicated.
+
+On the one hand, race is a social construct. It is a poor marker of genetic characteristics which might suggest higher or lower biological risks for most things in medicine.
+
+On the other hand, race is highly impactful in America. If studies show higher risk of adverse cardiovascular outcomes, it must reflect the realities of socioeconomic status, access to care, monetary resources for care, biases personal and structural throughout systems, chronic stress, and more. If studies show outcomes differ, then those differences are real and matter, even if the pathways are not highly biological.
+
+How to handle this and give each individual person before you the best care you can? You can click the race button in this and other calculators to recognize that a person before you may be subject to the same adverse forces in society which worsen outcomes. You can leave the race field at the default white setting in recognition that race is not highly biological.
+
+You will probably notice that changing race settings do not profoundly alter who lands above and below various treatment thresholds. You are encouraged by ACC and others to modify any risk estimation by the many other things you know about the unique person in front of you, which can include race as much as anything else.
+
 And pay attention as our understandings of race, biology, social determinants of health, and cardiovascular risk are always evolving, and hopefully improving."</string>
-    <string name="why_cant_enter_ldl_diastolic_bp">"Why can\'t I enter LDL cholesterol and diastolic blood pressure values into these calculators? I can on other apps.\
-ASCVD and Framingham use neither LDL cholesterol nor diastolic BP. The only fields for cholesterol and blood pressure in the respective published papers are total and HDL cholesterol for lipids and systolic BP for blood pressure.\
-Absence of LDL in particular makes sense when one considers that it has been difficult to measure and debates rage to this day regarding how to calculate it when not directly measured.\
-You may find fields in other apps and online calculators to enter LDL and DBP. But they don\'t do anything to the 10-year cardiac risk calculations. You can try it, enter DBP\'s of 70, 80, and 90, or various LDL\'s, and cardiac risk does not change. Why are these fields present, even in ACC\'s own online and app renditions of calculators? First, not all ACC ASCVD calculators do include these fields. Check the ACC\'s LDL Manager app — no LDL field, no DBP field. Second, some calculators offer management advice after rendering a 10-year cardiac risk. This guidance might vary based upon LDL and DBP levels. And third, I speculate that some calculators offer the fields because they imagine that users expect the fields.\
+    <string name="why_cant_enter_ldl_diastolic_bp">"Why can&#39;t I enter LDL cholesterol and diastolic blood pressure values into these calculators? I can on other apps.
+
+ASCVD and Framingham use neither LDL cholesterol nor diastolic BP. The only fields for cholesterol and blood pressure in the respective published papers are total and HDL cholesterol for lipids and systolic BP for blood pressure.
+Absence of LDL in particular makes sense when one considers that it has been difficult to measure and debates rage to this day regarding how to calculate it when not directly measured.
+
+You may find fields in other apps and online calculators to enter LDL and DBP. But they don&#39;t do anything to the 10-year cardiac risk calculations. You can try it, enter DBP&#39;s of 70, 80, and 90, or various LDL&#39;s, and cardiac risk does not change. Why are these fields present, even in ACC&#39;s own online and app renditions of calculators? First, not all ACC ASCVD calculators do include these fields. Check the ACC&#39;s LDL Manager app — no LDL field, no DBP field. Second, some calculators offer management advice after rendering a 10-year cardiac risk. This guidance might vary based upon LDL and DBP levels. And third, I speculate that some calculators offer the fields because they imagine that users expect the fields.
+
 So when purely focused on estimation of 10-year cardiac event risk, as this app does, you do not need to enter LDL and diastolic blood pressure."</string>
-    <string name="where_are_treatment_thresholds">"Where are the treatment thresholds?\
-Most other apps and online risk calcuators take the next step advising the clinician about statin treatment when the patient risk crosses the 7.5% threshold. This app does not.\
-I do not believe the 7.5% number is a magic threshold. When one considers the high NNT\'s for primary prevention of cardiovascular disease with statins (or any other intervention), it makes a low threshold like 7.5% hard to justify. Nearly every person exceeds 7.5% purely by age alone at some point, and tack on a few additional risk factors many qualify at young ages. Turns out even the ACC no longer hews stridently to 7.5%.\
-In the original Hyperlipidemia guideline with\
-ASCVD risk in 2013, statins for those ≥7.5% 10-year risk was a Class I (highest level, strongest) recommendation. Check the 2018 updated guideline, now all patients with intermediate risk\
-(7.5-20%) are class Ila.\
-Because I\'m not driven to turn risk calculations into statin recommendations, l\'ve included no thresholds. All treatment decisions should be discussions between doctor and patient regarding the many interventions which can reduce cardiovascular risk. These discussions can and should be made at any CV risk level, individualized to the patient at hand. Since I am de-emphasizing simple number-based knee-jerk treatment decisions based upon risk percentage, I simply don\'t include reference to treatment. Just cardiac risk. Get the cardiac risk and decide who needs treatment yourself and with your patient."</string>
-    <string name="where_are_target_ldls">"Where are the target LDL\'s\
-You\'ll note that I eschew strict treatment thresholds like 7.5% and such. So you will not be surprised that I don\'t think target LDL\'s are highly important in primary prevention.\
-The NNT\'s for primary prevention of CVD are pretty high. Abolute risk reductions for all-cause mortality and MI\'s are low Byrne 2022, see ref). When you decide to treat with a statin, the goal is to reduce cardiac risk. The goal is to be on the statin. If the patient is on the statin, their cardiac risk will be improved. So all that matters to me is to be on the statin. There is some evidence suggesting lower LDL yields lower CV risk, but the Byrne SR-MA makes this far from clear. It leaves me convinced that the first 20-40 mg of any statin is the most important titration a clinician can make, with much diminished yield from additional 20 mg aliquots. Check followup lipid levels if you like.\
-Aim for LDL reduction targets if you wish, following ACC recommendations if you find them compelling. But since the most important goal is to be on the statin, I focus on\
-compliance, not on LDL targets. And I focus on all the other measures which can reduce CV risk (smoking, BP control, exercise, etc.).\
-Secondary prevention is different… or is it?\
-Perhaps targets make more sense in highest risk individuals who have already demonstrated their inclination towards CV events. But the recent Korean RCT on treat-to-LDL-target vs high potency statin with a set-it-and-forget-it approach (Hong, see ref) showed no difference in disease or patient-oriented outcomes, making a set-it-and-forget-it approach appealing.\
-Another great paradigm-challenging study is the IDEAL RCT (Pederson, see ref). For secondary prevention, patients were\
-randomized to a modest dose of Simvastatin 20 mg qDay or to a whopping, maximally intense Atorvastatin 80 mg qDay. The atorvastatin group reached only modestly better LDL and enjoyed slightly improved patient outcomes —when they were improved at all! Clearly, it\'s the first 20 mg of any statin, even in secondary prevention, that matters most for improving outcomes, not how many additional 20 mg aliquots you tack on further.\
-Especially now that treat-to-target for secondary prevention is iffy, I am convinced that for primary prevention need not focus on LDL titration. I\'ll focus on taking the statin and other risk-reducing measures and not focus on how many LDL points have been reduced."</string>
-    <string name="can_i_plug_in_cac_score">"Can I plug in a coronary artery calcium score?\
-No. No you can\'t.\
-Coronary artery calcium (CAC) scoring for purposes of estimating cardiac risk is not high-value care. In a recently published systematic review and meta-analysis in the JAMA Internal Medicine More Is Less series, addition of CAC to a variety of cardiac risk estimation schemes (Framingham, QRISK, etc.) added virtually nothing. It reassigned a few from low risk to high, a few from high risk to low, but the incremental improvement in ability to predict actual cardiac events was microscopic.\
-CAC scanning for incorportation into cardiac risk estimation comes with significant harms. These include sizable cost, radiation exposure, and the discovery of incidentalomas which send clinician and patient down the rabbit hole of diagnostic misadventures and anxiety. This is akin to LDCT lung cancer screening with its attendant expense, radiation, and risk of incidentalomas, but with one main difference: low-dose CT lung cancer screening has RCT evidence proving it improves a few outcomes.\
-CAC scoring does not, at least yet.\
-USPSTF in 2018 reported evidence is insufficient to support the value of CAC scanning. Studies are ongoing to assess whether CAC scans prevent actual cardiac events and save lives. Until of proven value for patient outcomes, don\'t do CAC scans. Do high-value things."</string>
-    <string name="what_does_24.3_percent_cardiac_risk_mean">"What does 24.3 % cardiac risk mean?\
-Cardiac risk numbers estimate the risk that a particular patient will suffer a cardiovascular event as defined by that calculator and study over the next 10 years. As stated in the Framingham discussion, Framingham\'s cardiac risk outcomes are fatal and non-fatal MI, fatal and non-fatal stroke, and CHF. The ASCVD studies original and revised both estimate risk of only fatal and non-fatal MI and fatal and non-fatal stroke. 24.3% risk means a 24.3% chance of suffering one of the specified cardiovascular outcomes over the next 10 years.\
-This is tricky to explain to patients. How do I do it? I simplify it to heart attack and proceed something like this: \"Sir, you have an estimated risk of 24.3% of having a heart attack over the next 10 years. What does that mean? If I had 100 patients just like you — 100 patients all 61 years old, 100 patients all men, 100 patients with your cholesterol, 100 patients all smokers like you (etc.) — and I took care of you 100 men from age 61 to 71, over those 10 years about 24 of you men would have a heart attack. About 76 would not. But 24 of you would, and some of you would die on the spot, and others would survive weakened and perhaps need bypass or stenting and so on. And because all 100 men are just like you, I couldn\'t pick out which are the 24 who will have the heart attack from the 76 who won\'t. All I can do is try to protect all 100 of you. Of course, there aren\'t 100 of you, there\'s only one of you. And maybe you\'ll have a heart attack and maybe you won\'t. What\'s the chance you will over the next 10 years? 24.3%.\
+    <string name="where_are_treatment_thresholds">"Where are the treatment thresholds?
+
+Most other apps and online risk calcuators take the next step advising the clinician about statin treatment when the patient risk crosses the 7.5% threshold. This app does not.
+
+I do not believe the 7.5% number is a magic threshold. When one considers the high NNT&#39;s for primary prevention of cardiovascular disease with statins (or any other intervention), it makes a low threshold like 7.5% hard to justify. Nearly every person exceeds 7.5% purely by age alone at some point, and tack on a few additional risk factors many qualify at young ages. Turns out even the ACC no longer hews stridently to 7.5%.
+In the original Hyperlipidemia guideline with
+ASCVD risk in 2013, statins for those &#8805;7.5% 10-year risk was a Class I (highest level, strongest) recommendation. Check the 2018 updated guideline, now all patients with intermediate risk
+(7.5-20%) are class Ila.
+
+Because I&#39;m not driven to turn risk calcualtions into statin recommenations, l&#39;ve included no thresholds. All treatment decisions should be discussions between doctor and patient regarding the many interventions which can reduce cardiovascular risk. These discussions can and should be made at any CV risk level, individualized to the patient at hand. Since I am de-emphasizing simple number-based knee-jerk treatment decisions based upon risk percentage, I simply don&#39;t include reference to treatment. Just cardiac risk. Get the cardiac risk and decide who needs treatment yourself and with your patient."</string>
+    <string name="where_are_target_ldls">"Where are the target LDL&#39;s
+
+You&#39;ll note that I eschew strict treatment thresholds like 7.5% and such. So you will not be surprised that I don&#39;t think target LDL&#39;s are highly important in primary prevention.
+
+The NNT&#39;s for primary prevention of CVD are pretty high. Abolute risk reductions for all-cause mortality and MI&#39;s are low Byrne 2022, see ref). When you decide to treat with a statin, the goal is to reduce cardiac risk. The goal is to be on the statin. If the patient is on the statin, their cardiac risk will be improved. So all that matters to me is to be on the statin. There is some evidence suggesting lower LDL yields lower CV risk, but the Byrne SR-MA makes this far from clear. It leaves me convinced that the first 20-40 mg of any statin is the most important titration a clinician can make, with much diminished yield from additional 20 mg aliquots. Check followup lipid levels if you like.
+Aim for LDL reduction targets if you wish, following ACC recommendations if you find them compelling. But since the most important goal is to be on the statin, I focus on
+compliance, not on LDL targets. And I focus on all the other measures which can reduce CV risk (smoking, BP control, exercise, etc.).
+
+Secondary prevention is different… or is it?
+Perhaps targets make more sense in highest risk individuals who have already demonstrated their inclination towards CV events. But the recent Korean RCT on treat-to-LDL-target vs high potency statin with a set-it-and-forget-it approach (Hong, see ref) showed no difference in disease or patient-oriented outcomes, making a set-it-and-forget-it approach appealing.
+Another great paradigm-challenging study is the IDEAL RCT (Pederson, see ref). For secondary prevention, patients were
+randomized to a modest dose of Simvastatin 20 mg qDay or to a whopping, maximally intense Atorvastatin 80 mg qDay. The atorvastatin group reached only modestly better LDL and enjoyed slightly improved patient outcomes —when they were improved at all! Clearly, it&#39;s the first 20 mg of any statin, even in secondary prevention, that matters most for improving outcomes, not how many additional 20 mg aliquots you tack on further.
+
+Especially now that treat-to-target for secondary prevention is iffy, I am convinced that for primary prevention need not focus on LDL titration. I&#39;ll focus on taking the statin and other risk-reducing measures and not focus on how many LDL points have been reduced."</string>
+    <string name="can_i_plug_in_cac_score">"Can I plug in a coronary artery calcium score?
+
+No. No you can&#39;t.
+
+Coronary artery calcium (CAC) scoring for purposes of estimating cardiac risk is not high-value care. In a recently published systematic review and meta-analysis in the JAMA Internal Medicine More Is Less series, addition of CAC to a variety of cardiac risk estimation schemes (Framingham, QRISK, etc.) added virtually nothing. It reassigned a few from low risk to high, a few from high risk to low, but the incremental improvement in ability to predict actual cardiac events was microscopic.
+
+CAC scanning for incorportation into cardiac risk estimation comes with significant harms. These include sizable cost, radiation exposure, and the discovery of incidentalomas which send clinician and patient down the rabbit hole of diagnostic misadventures and anxiety. This is akin to LDCT lung cancer screening with its attendant expense, radiation, and risk of incidentalomas, but with one main difference: low-dose CT lung cancer screening has RCT evidence proving it improves a few outcomes.
+CAC scoring does not, at least yet.
+
+USPSTF in 2018 reported evidence is insufficient to support the value of CAC scanning. Studies are ongoing to assess whether CAC scans prevent actual cardiac events and save lives. Until of proven value for patient outcomes, don&#39;t do CAC scans. Do high-value things."</string>
+    <string name="what_does_24.3_percent_cardiac_risk_mean">"What does 24.3 % cardiac risk mean?
+
+Cardiac risk numbers estimate the risk that a particular patient will suffer a cardiovascular event as defined by that calculator and study over the next 10 years.
+
+        As stated in the Framingham discussion, Framingham\'s cardiac risk outcomes are fatal and non-fatal MI, fatal and non-fatal stroke, and CHF. The ASCVD studies original and revised both estimate risk of only fatal and non-fatal MI and fatal and non-fatal stroke. 24.3% risk means a 24.3% chance of suffering one of the specified cardiovascular outcomes over the next 10 years.\
+
+        This is tricky to explain to patients. How do I do it? I simplify it to heart attack and proceed something like this: \"Sir, you have an estimated risk of 24.3% of having a heart attack over the next 10 years. What does that mean? If I had 100 patients just like you — 100 patients all 61 years old, 100 patients all men, 100 patients with your cholesterol, 100 patients all smokers like you (etc.) — and I took care of you 100 men from age 61 to 71, over those 10 years about 24 of you men would have a heart attack. About 76 would not. But 24 of you would, and some of you would die on the spot, and others would survive weakened and perhaps need bypass or stenting and so on. And because all 100 men are just like you, I couldn\'t pick out which are the 24 who will have the heart attack from the 76 who won\'t. All I can do is try to protect all 100 of you. Of course, there aren\'t 100 of you, there\'s only one of you. And maybe you\'ll have a heart attack and maybe you won\'t. What\'s the chance you will over the next 10 years? 24.3%.\
 Now let\'s talk about how we can lower that risk…\""</string>
-    <string name="this_app_offers_features">"This app offers features which serve education and clinical care just the way I want them to.\
-These 3 calculators fit neatly on one single screen. This makes it easy and effective to discuss with learner or patient alike the many things which influence cardiac risk and relatively by how much.\
-For instance, these calculators let a clinician demonstrate that flipping the smoking switch from Yes to No makes a huge difference.\
+    <string name="this_app_offers_features">"
+        This app offers features which serve education and clinical care just the way I want them to.\
+
+        These 3 calculators fit neatly on one single screen. This makes it easy and effective to discuss with learner or patient alike the many things which influence cardiac risk and relatively by how much.\
+
+        For instance, these calculators let a clinician demonstrate that flipping the smoking switch from Yes to No makes a huge difference.\
 Likewise one can show why a cholesterol of 220 at a young age is of modest concern while at an older age the risk grows and becomes more compelling. Patient and learner alike can see from Framingham that even jumps of 20, 30, or 40 cholesterol points are not terribly impactful on cardiac risk.\
-If you have heard that Framingham risk estimates are higher than ASCVD, now you can check that for any actual patient or situation.\
-No other app offers the new proposed revised pooled cohort equation. It is more accurate than Framingham, more accurate than ACC\'s ASCVD, and more accurate across all gender and racial pairings. And it discriminates (sorts) patients more accurately on either side of various treatment thresholds. Speaking of thresholds, this app does not push ACC-AHA treatment thresholds or recommendations on users. Nor does it cite BOGSAT (expert opinion) LDL targets for\
+
+        If you have heard that Framingham risk estimates are higher than ASCVD, now you can check that for any actual patient or situation.\
+
+        No other app offers the new proposed revised pooled cohort equation. It is more accurate than Framingham, more accurate than ACC\'s ASCVD, and more accurate across all gender and racial pairings. And it discriminates (sorts) patients more accurately on either side of various treatment thresholds. Speaking of thresholds, this app does not push ACC-AHA treatment thresholds or recommendations on users. Nor does it cite BOGSAT (expert opinion) LDL targets for\
 primary prevention (BOGSAT = \"bunch of guys\
 sitting around table). I think these targets are an expensive example of low-value care.\
-Please feel free to send me feedback. If you have suggestions for the app or for the more-info discussions for users and learners, I\'d love to hear from you. We in primary care should lead on patient-oriented, evidence-based, high-value primary prevention for the betterment of our patients and our communities.\
+
+        Please feel free to send me feedback. If you have suggestions for the app or for the more-info discussions for users and learners, I\'d love to hear from you. We in primary care should lead on patient-oriented, evidence-based, high-value primary prevention for the betterment of our patients and our communities.\
 - Joshua Steinberg MD, Binghamton"</string>
     <string name="race_calculation_note">"No data was done on other races in the risk calculations reference we used, so it will be calculated the same as White. For a more detailed response, please read \"what about race?\"."</string>
-
 
 
 

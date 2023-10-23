@@ -2,6 +2,7 @@ package com.example.ascvd_calc1
 
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -37,10 +38,35 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_moreinfo -> Log.d("NAV", "MoreInfo was clicked!")
             }
         }
+
+        // User Agreement Dialog
+        showUserAgreementDialog()
     }
 
     // Ensure the system back button in the toolbar works correctly with the NavController
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    private fun showUserAgreementDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("*For Clinicans Only*")
+        builder.setMessage("This app was designed to be for clinicans only. Non-clinicans should seek advice from their physician")
+        builder.setCancelable(false)
+
+        // Positive button (Agree)
+        builder.setPositiveButton("Agree") { dialog, _ ->
+            // Continue using the app
+            dialog.dismiss()
+        }
+
+        // Negative button (Disagree)
+        builder.setNegativeButton("Disagree") { _, _ ->
+            // Close the app
+            finish()
+        }
+
+        // Show the dialog
+        builder.show()
     }
 }

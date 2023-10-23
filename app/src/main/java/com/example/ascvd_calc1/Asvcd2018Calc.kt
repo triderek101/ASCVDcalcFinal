@@ -332,7 +332,8 @@ class Asvcd2018Calc : AppCompatActivity() {
         Log.d("AppLog", "Calculate pt-values for SBP and SBP squared: $sbpSquaredValue")
 
         // Computing the pt-value for Chol total-to-HDL ratio
-        val cholToHDLValue = chol / hdl
+        val cholToHDLValue: Float = chol.toFloat() / hdl.toFloat()
+
         Log.d("AppLog", "Computing the pt-value for Chol total-to-HDL ratio: $cholToHDLValue")
 
         // Get the Chol total-to-HDL ratio coefficient and compute the product with pt-value
@@ -396,7 +397,7 @@ class Asvcd2018Calc : AppCompatActivity() {
 
         // Calculate the Chol total-to-HDL ratio if Black value
         val cholToHDLIfBlackCoefficient = getCholToHDLRatioIfBlackCoefficient(race, gender)
-        val cholToHDLIfBlackValue = cholToHDLIfBlackCoefficient * (chol / hdl)
+        val cholToHDLIfBlackValue: Double = cholToHDLIfBlackCoefficient * (chol.toDouble() / hdl.toDouble())
         Log.d("AppLog", "Calculate the Chol total-to-HDL ratio if Black value: $cholToHDLIfBlackValue")
 
         // Calculate the Systolic BP if on BP med if Black value, only if the user is on BP medication
